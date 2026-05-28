@@ -86,7 +86,7 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Codemonk Paragraph Analyzer API',
+    'TITLE': 'Word Finder API',
     'DESCRIPTION': 'API for paragraph analysis, search, and user management.',
     'VERSION': '1.0.0',
 }

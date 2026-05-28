@@ -1,4 +1,4 @@
-# Codemonk Paragraph Analyzer
+# Word Finder
 
 This repository contains a Django backend and a React frontend for a paragraph analyzer application.
 

@@ -1,4 +1,4 @@
-# Running Codemonk Paragraph Analyzer
+# Running Word Finder
 
 Two ways to run this app: Docker Compose (recommended) or manually.
 

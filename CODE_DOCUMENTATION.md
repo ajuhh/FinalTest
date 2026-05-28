@@ -1,4 +1,4 @@
-# Codemonk Paragraph Analyzer — Code Documentation
+# Word Finder — Code Documentation
 
 ## Architecture
 

@@ -15,7 +15,7 @@ function Navbar({ user, onLogout }) {
     <header className="card panel-card navbar-shell">
       <div className="navbar-left">
         <Link to="/" className="brand-link">
-          Codemonk
+          Word Finder
         </Link>
       </div>
 
