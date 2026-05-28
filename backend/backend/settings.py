@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'drf_spectacular',
     'api',
 ]
 
@@ -81,6 +82,13 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Codemonk Paragraph Analyzer API',
+    'DESCRIPTION': 'API for paragraph analysis, search, and user management.',
+    'VERSION': '1.0.0',
 }
 
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
