@@ -21,7 +21,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: codemonk_celery
-    command: celery -A backend worker --loglevel=info
+    command: celery -A celery_app worker --loglevel=info
     volumes:
       - ./backend:/code
     depends_on:
