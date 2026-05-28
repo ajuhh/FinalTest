@@ -1,0 +1,54 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: codemonk_backend
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./backend:/code
+    depends_on:
+      - redis
+    environment:
+      - PYTHONUNBUFFERED=1
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+
+  celery:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: codemonk_celery
+    command: celery -A backend worker --loglevel=info
+    volumes:
+      - ./backend:/code
+    depends_on:
+      - redis
+      - backend
+    environment:
+      - PYTHONUNBUFFERED=1
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: codemonk_frontend
+    ports:
+      - '3000:80'
+    depends_on:
+      - backend
+
+  redis:
+    image: redis:7-alpine
+    container_name: codemonk_redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
