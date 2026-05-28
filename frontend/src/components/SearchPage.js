@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 function SearchPage({ onSearch, results }) {
-  const [searchTerm, setSearchTerm] = useState('django');
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();

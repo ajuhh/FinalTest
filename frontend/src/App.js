@@ -132,9 +132,8 @@ function App() {
       totalParagraphs: paragraphs.length,
       totalWords,
       uniqueWords,
-      searches: searchResults.length,
     };
-  }, [paragraphs, searchResults.length]);
+  }, [paragraphs]);
 
   if (loading) {
     return <div className="app-shell" style={{ padding: '48px', textAlign: 'center' }}>Loading...</div>;
